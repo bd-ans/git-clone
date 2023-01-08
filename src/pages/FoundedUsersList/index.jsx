@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
@@ -6,8 +6,10 @@ const index = () => {
 	const { values } = useContext(context);
 
 	const foundUsers = values.foundUsers;
-	const setMActive = values.setMActive;
-
+	
+	useEffect(() => {
+		document.title = `bd-ans | Search`;
+	}, []);
 	return (
 		<>
 			<div className='col-12 col-md-8 col-lg-9'>

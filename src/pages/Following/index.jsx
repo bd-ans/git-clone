@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
@@ -6,6 +6,10 @@ const index = () => {
 	const { values } = useContext(context);
 
 	const { following } = values;
+
+	useEffect(() => {
+		document.title = "bd-ans | Following";
+	}, []);
 	return (
 		<>
 			<div className='col-12 col-md-8 col-lg-9'>

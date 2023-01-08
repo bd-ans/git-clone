@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
@@ -6,6 +6,10 @@ const index = () => {
 	const { values } = useContext(context);
 
 	const repos = values.repos;
+
+	useEffect(() => {
+		document.title = "bd-ans | Repositories";
+	}, []);
 	return (
 		<>
 			<div className='repos col-12 col-md-8 col-lg-9'>

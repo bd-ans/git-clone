@@ -11,6 +11,9 @@ import Followers from "./pages/Followers";
 import Following from "./pages/Following";
 import NavbarRes from "./components/NavbarRes";
 import FoundedUsersList from "./pages/FoundedUsersList";
+import Projects from "./pages/Projects";
+import Packages from "./pages/Packages";
+import Stars from "./pages/Stars";
 
 const App = () => {
 	const { getUser, getRepo, getFollowers, getFollowing, getUsers } = Api;
@@ -90,6 +93,9 @@ const App = () => {
 						<Route path='/' element={<PinnedRepos />} />
 						<Route path='/repositories' element={<Repos />} />
 						<Route path={`/search/users`} element={<FoundedUsersList />} />
+						<Route path='/projects' element={<Projects />} />
+						<Route path='/packages' element={<Packages />} />
+						<Route path='/stars' element={<Stars />} />
 						<Route path='/followers' element={<Followers />} />
 						<Route path='/following' element={<Following />} />
 					</Route>

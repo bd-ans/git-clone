@@ -6,6 +6,10 @@ const index = () => {
 	const { values } = useContext(context);
 
 	const { repos } = values;
+
+	useEffect(() => {
+		document.title = "bd-ans | Owerview";
+	}, []);
 	return (
 		<>
 			<div className='pinned-repos col-12 col-md-8 col-lg-9 mt-4 position-relative'>

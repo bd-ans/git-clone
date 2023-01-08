@@ -13,41 +13,107 @@ const index = () => {
 
 	const [overwievStyle, setOverwievStyle] = useState("");
 	const [reposStyle, setReposStyle] = useState("");
+	const [projectsStyle, setProjectsStyle] = useState("");
+	const [packagesStyle, setPackagesStyle] = useState("");
+	const [starsStyle, setStarsStyle] = useState("");
 
 	useEffect(() => {
 		if (mActive === "overwiev") {
 			setOverwievStyle("navActive");
 			setReposStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
 		} else if (mActive === "/") {
 			setOverwievStyle("navActive");
 			setReposStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
 		} else if (mActive === "/repositories") {
-			setOverwievStyle("");
 			setReposStyle("navActive");
+			setOverwievStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
 		} else if (mActive === "repositories") {
-			setOverwievStyle("");
 			setReposStyle("navActive");
+			setOverwievStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
 		} else if (mActive === "/followers") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "followers") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "/following") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "following") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "/search/users") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "search/users") {
 			setOverwievStyle("");
 			setReposStyle("");
+			setPackagesStyle("");
+			setStarsStyle("");
+			setProjectsStyle("");
 		} else if (mActive === "/projects") {
+			setProjectsStyle("navActive");
 			setOverwievStyle("");
 			setReposStyle("");
+			setStarsStyle("");
+			setPackagesStyle("");
+		} else if (mActive === "projects") {
+			setProjectsStyle("navActive");
+			setOverwievStyle("");
+			setReposStyle("");
+			setStarsStyle("");
+			setPackagesStyle("");
+		} else if (mActive === "/packages") {
+			setPackagesStyle("navActive");
+			setOverwievStyle("");
+			setReposStyle("");
+			setProjectsStyle("");
+			setStarsStyle("");
+		} else if (mActive === "packages") {
+			setPackagesStyle("navActive");
+			setOverwievStyle("");
+			setReposStyle("");
+			setProjectsStyle("");
+			setStarsStyle("");
+		} else if (mActive === "/stars") {
+			setStarsStyle("navActive");
+			setOverwievStyle("");
+			setReposStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
+		} else if (mActive === "stars") {
+			setStarsStyle("navActive");
+			setOverwievStyle("");
+			setReposStyle("");
+			setProjectsStyle("");
+			setPackagesStyle("");
 		}
 	}, [mActive]);
 
@@ -56,7 +122,6 @@ const index = () => {
 			<div className='home-nav border-bottom position-sticky w-100 pt-2 bg-white'>
 				<ul className='home-list list-unstyled d-flex justify-content-between justify-content-md-center gap-2 px-2 mb-0'>
 					<li
-						id='overwiev'
 						className={`list-item ${overwievStyle}
 					 pb-1 mb-0`}
 						onClick={() => setMActive("overwiev")}>
@@ -69,7 +134,6 @@ const index = () => {
 					</li>
 
 					<li
-						id='repos'
 						className={`list-item ${reposStyle}
 					 pb-1 mb-0`}
 						onClick={() => setMActive("repositories")}>
@@ -95,7 +159,10 @@ const index = () => {
 						</NavLink>
 					</li>
 
-					<li className={`list-item pb-1 mb-0`}>
+					<li
+						className={`list-item ${projectsStyle}
+					 pb-1 mb-0`}
+						onClick={() => setMActive("projects")}>
 						<NavLink
 							className='item-link text-decoration-none text-dark d-flex align-items-center gap-2 rounded-3 p-1'
 							to='/projects'>
@@ -115,7 +182,10 @@ const index = () => {
 						</NavLink>
 					</li>
 
-					<li className={`list-item  pb-1 mb-0`}>
+					<li
+						className={`list-item ${packagesStyle}
+					 pb-1 mb-0`}
+						onClick={() => setMActive("packages")}>
 						<NavLink
 							className='item-link text-decoration-none text-dark d-flex align-items-center gap-2 rounded-3 p-1'
 							to='/packages'>
@@ -124,7 +194,10 @@ const index = () => {
 						</NavLink>
 					</li>
 
-					<li className={`list-item  pb-1 mb-0`}>
+					<li
+						className={`list-item ${starsStyle}
+					 pb-1 mb-0`}
+						onClick={() => setMActive("stars")}>
 						<NavLink
 							className='item-link text-decoration-none text-dark d-flex align-items-center gap-2 rounded-3 p-1'
 							to={"/stars"}>

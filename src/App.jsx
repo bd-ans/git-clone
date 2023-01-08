@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Api } from "./API/Api";
+import { Api } from "./API/API";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import { context } from "./context/context";

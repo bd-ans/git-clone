@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import { Building20Regular, Location20Regular } from "@fluentui/react-icons";
 import { context } from "../../context/context";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+
 import "./index.css";
 
 const index = () => {
@@ -37,6 +39,15 @@ const index = () => {
 					Edit profile
 				</button>
 				<div className=''>
+					<li className='mb-0 d-flex d-md-none align-items-center'>
+						<i className='bi bi-link-45deg' style={{ fontSize: "1.2rem" }}></i>
+						<a
+							className='ms-1 text-decoration-none sidebar-link'
+							href={`http://${userInfo.blog}`}
+							target='_blank'>
+							{userInfo.blog}
+						</a>
+					</li>
 					<NavLink
 						className='followers-link text-decoration-none text-dark'
 						to='/followers'
@@ -52,6 +63,34 @@ const index = () => {
 						{userInfo.following} following
 					</NavLink>
 				</div>
+				<ul className='list-unstyled main-saidbar-info mt-4 all-tst'>
+					<li className='mb-0 d-flex align-items-center'>
+						<Building20Regular />
+						<p className='ms-1 mb-1'>{userInfo.company}</p>
+					</li>
+					<li className='mb-0 d-flex align-items-center'>
+						<Location20Regular />
+						<p className='ms-1 mb-1'>{userInfo.location}</p>
+					</li>
+					<li className='mb-0 d-flex align-items-center'>
+						<i className='bi bi-link-45deg' style={{ fontSize: "1.2rem" }}></i>
+						<a
+							className='ms-1 text-decoration-none sidebar-link'
+							href={`http://${userInfo.blog}`}
+							target='_blank'>
+							{userInfo.blog}
+						</a>
+					</li>
+					<li className='mb-0 d-flex align-items-center'>
+						<i className='bi bi-twitter' style={{ fontSize: "1.2rem" }}></i>
+						<a
+							className='ms-1 text-decoration-none sidebar-link'
+							href={`https://twitter.com/${userInfo.twitter_username}`}
+							target='_blank'>
+							{userInfo.twitter_username}
+						</a>
+					</li>
+				</ul>
 			</div>
 		</>
 	);

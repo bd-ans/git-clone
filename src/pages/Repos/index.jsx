@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
-const Repos = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const repos = values.repos;
@@ -152,4 +152,4 @@ const Repos = () => {
 	);
 };
 
-export default Repos;
+export default index;

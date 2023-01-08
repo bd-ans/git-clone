@@ -3,7 +3,7 @@ import { context } from "../../context/context";
 import { NavLink } from "react-router-dom";
 import "./index.css";
 
-const Sidebar = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const userInfo = values.userInfo;
@@ -57,4 +57,4 @@ const Sidebar = () => {
 	);
 };
 
-export default Sidebar;
+export default index;

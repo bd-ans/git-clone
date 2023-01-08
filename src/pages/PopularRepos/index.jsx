@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./index.css";
 import { context } from "../../context/context";
 
-const PinnedRepos = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const { repos } = values;
@@ -77,4 +77,4 @@ const PinnedRepos = () => {
 	);
 };
 
-export default PinnedRepos;
+export default index;

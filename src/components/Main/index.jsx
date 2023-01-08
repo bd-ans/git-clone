@@ -4,7 +4,7 @@ import HomeNav from "../HomeNav";
 import Sidebar from "../Sidebar";
 import "./index.css";
 
-const Main = () => {
+const index = () => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	const handleResize = () => {
@@ -35,4 +35,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default index;

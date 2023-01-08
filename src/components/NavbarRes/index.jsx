@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
-const NavbarRes = () => {
+const index = () => {
 	const { values } = useContext(context);
 	const {
 		userInfo,
@@ -98,4 +98,4 @@ const NavbarRes = () => {
 	);
 };
 
-export default NavbarRes;
+export default index;

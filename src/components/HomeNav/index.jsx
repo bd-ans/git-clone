@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { context } from "../../context/context";
 import "./index.css";
 
-const HomeNav = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const mActive = values.mActive;
@@ -126,4 +126,4 @@ const HomeNav = () => {
 	);
 };
 
-export default HomeNav;
+export default index;

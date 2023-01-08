@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
-const Following = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const { following } = values;
@@ -61,4 +61,4 @@ const Following = () => {
 	);
 };
 
-export default Following;
+export default index;

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { context } from "../../context/context";
 import "./index.css";
 
-const Followers = () => {
+const index = () => {
 	const { values } = useContext(context);
 
 	const followers = values.followers;
@@ -61,4 +61,4 @@ const Followers = () => {
 	);
 };
 
-export default Followers;
+export default index;

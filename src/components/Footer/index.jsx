@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Footer = () => {
+const index = () => {
 	return (
 		<>
 			<footer className='footer container-xxl container-fluid d-flex align-items-center gap-5 pt-4 pb-4 border-top'>
@@ -83,4 +83,4 @@ const Footer = () => {
 	);
 };
 
-export default Footer;
+export default index;

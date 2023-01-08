@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { context } from "../../context/context";
 import "./index.css";
 
-const Navbar = () => {
+const index = () => {
 	const { values } = useContext(context);
 	const {
 		setSearchUser,
@@ -100,4 +100,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default index;

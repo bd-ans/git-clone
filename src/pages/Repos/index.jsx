@@ -13,11 +13,9 @@ const index = () => {
 	const [point, setPoint] = useState(1);
 
 	const firstPoint = limit * point;
-
 	const lastPoint = firstPoint - limit;
 
 	const lastPage = repos.slice(lastPoint, firstPoint);
-
 	const paginate = (pageNumber) => {
 		setPoint(pageNumber);
 	};

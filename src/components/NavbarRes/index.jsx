@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import { context } from "../../context/context";
 import { v4 as uuidv4 } from "uuid";
+import { NavLink } from "react-router-dom";
 import "./index.css";
 
 const index = () => {
@@ -45,27 +46,18 @@ const index = () => {
 									!searchUser ? setFoundUsers([]) : ""
 								);
 							}}
-					
 							onKeyDown={(e) => {
-								return e.key === "Enter" ? getInfo() : "";
-							}}
-						></input>
-						<ul className='search-items position-absolute list-unstyled p-0 m-0 rounded-3'>
-							{searchUser
-								? foundUsers.map((item) => {
-										return (
-											<li
-												className='search-item py-2 px-2  border-bottom'
-												key={uuidv4()}
-												onClick={(e) => {
-													setUser(item.login), setSearchUser("");
-												}}>
-												{item.login}
-											</li>
-										);
-								  })
-								: ""}
-						</ul>
+								e.key.toLowerCase().trim() === "enter" ? getInfo() : "";
+								const searchLink = document.getElementById("search-link");
+								e.key.toLowerCase().trim() === "enter"
+									? searchLink.click()
+									: "";
+							}}></input>
+						<NavLink
+							onClick={() => setMActive("/search/users")}
+							id='search-link'
+							className='navbar-search-icon'
+							to={`/search/users`}></NavLink>
 					</div>
 					<ul className='nav-list list-unstyled p-0 m-0'>
 						<li className='nav-item w-100 text-white p-2'>Dashboard</li>

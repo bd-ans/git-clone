@@ -1,12 +1,24 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { context } from "../../context/context";
 import { v4 as uuidv4 } from "uuid";
+import Paginate from "../../components/paginate";
 import "./index.css";
 
 const index = () => {
 	const { values } = useContext(context);
 
-	const { following } = values;
+	const following = values.following;
+
+	const [limit, setLimit] = useState(10);
+	const [point, setPoint] = useState(1);
+
+	const firstPoint = limit * point;
+	const lastPoint = firstPoint - limit;
+
+	const lastPage = following.slice(lastPoint, firstPoint);
+	const paginate = (pageNumber) => {
+		setPoint(pageNumber);
+	};
 
 	useEffect(() => {
 		document.title = "bd-ans | Following";
@@ -15,8 +27,8 @@ const index = () => {
 		<>
 			<div className='col-12 col-md-8 col-lg-9'>
 				<ul className='followers-list list-unstyled p-0 m-0'>
-					{following.length > 0 ? (
-						following.map((following) => {
+					{lastPage.length > 0 ? (
+						lastPage.map((following) => {
 							return (
 								<li
 									className='border-bottom py-4 d-flex justify-content-between align-items-start'
@@ -61,6 +73,16 @@ const index = () => {
 						</div>
 					)}
 				</ul>
+				<div className='container d-flex justify-content-center mt-3'>
+					<nav aria-label='Page navigation example'>
+						<Paginate
+							repos={following}
+							limit={limit}
+							active={point}
+							paginate={paginate}
+						/>
+					</nav>
+				</div>
 			</div>
 		</>
 	);

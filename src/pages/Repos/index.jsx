@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { context } from "../../context/context";
-import Paginate from "./paginate";
+import Paginate from "../../components/paginate";
 import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 

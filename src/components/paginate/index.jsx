@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const paginate = ({ repos, limit, lastPage, active, paginate }) => {
+const paginate = ({ repos, limit, active, paginate }) => {
 	const [point, setPoint] = useState([]);
 	const [tpoint, settPoint] = useState([]);
 

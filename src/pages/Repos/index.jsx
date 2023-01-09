@@ -1,11 +1,25 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { context } from "../../context/context";
+import Paginate from "./paginate";
 import "./index.css";
 
 const index = () => {
 	const { values } = useContext(context);
 
 	const repos = values.repos;
+
+	const [limit, setLimit] = useState(6);
+	const [point, setPoint] = useState(1);
+
+	const firstPoint = limit * point;
+
+	const lastPoint = firstPoint - limit;
+
+	const lastPage = repos.slice(lastPoint, firstPoint);
+
+	const paginate = (pageNumber) => {
+		setPoint(pageNumber);
+	};
 
 	useEffect(() => {
 		document.title = "bd-ans | Repositories";
@@ -73,7 +87,7 @@ const index = () => {
 					</button>
 				</div>
 				<ul className='repo-list list-unstyled d-flex flex-column gap-2 p-0 m-0 my-3'>
-					{repos.map((item) => {
+					{lastPage.map((item) => {
 						return (
 							<li className='repo-item border-bottom w-100 p-4' key={item.id}>
 								<div className='item-top w-100 d-flex justify-content-between align-items-center'>
@@ -151,6 +165,17 @@ const index = () => {
 						);
 					})}
 				</ul>
+				<div className='container d-flex justify-content-center'>
+					<nav aria-label='Page navigation example'>
+						<Paginate
+							repos={repos}
+							limit={limit}
+							lastPage={lastPage}
+							active={point}
+							paginate={paginate}
+						/>
+					</nav>
+				</div>
 			</div>
 		</>
 	);

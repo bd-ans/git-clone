@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Building20Regular, Location20Regular } from "@fluentui/react-icons";
 import { context } from "../../context/context";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./index.css";
 

@@ -9,7 +9,9 @@ const index = () => {
 					<a className='logo-link'>
 						<i className='bi bi-github fs-4'></i>
 					</a>
-					<p className='footer-text m-0'>© 2022 GitHub, Inc.</p>
+					<p className='footer-text m-0'>{`© 
+					${new Date().getFullYear()}
+					 GitHub, Inc.`}</p>
 				</div>
 				<ul className='footer-navbar w-75 list-unstyled d-flex flex-wrap justify-content-between gap-2 align-items-center p-0 m-0'>
 					<li className='footer-nav-item'>

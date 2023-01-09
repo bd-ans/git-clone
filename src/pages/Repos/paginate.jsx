@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const paginate = ({ repos, limit, lastPage, active, paginate }) => {
 	const [point, setPoint] = useState([]);
@@ -23,7 +24,8 @@ const paginate = ({ repos, limit, lastPage, active, paginate }) => {
 							className={`page-item ${active === item ? "active" : ""}`}
 							onClick={() => {
 								paginate(item);
-							}}>
+							}}
+							id={item}>
 							<p className='page-link btn'>{item}</p>
 						</li>
 					);

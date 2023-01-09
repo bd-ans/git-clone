@@ -8,7 +8,7 @@ const index = () => {
 
 	const repos = values.repos;
 
-	const [limit, setLimit] = useState(6);
+	const [limit, setLimit] = useState(20);
 	const [point, setPoint] = useState(1);
 
 	const firstPoint = limit * point;
@@ -89,17 +89,23 @@ const index = () => {
 				<ul className='repo-list list-unstyled d-flex flex-column gap-2 p-0 m-0 my-3'>
 					{lastPage.map((item) => {
 						return (
-							<li className='repo-item border-bottom w-100 p-4' key={item.id}>
+							<li className='repo-item border-bottom w-100 py-2' key={item}>
 								<div className='item-top w-100 d-flex justify-content-between align-items-center'>
 									<div className='item-top-info w-100'>
 										<a
-											className='repo-title text-decoration-none fs-5 me-2'
+											className='repo-title text-decoration-none fs-5 me-2 pt-1'
 											href={item.html_url}>
 											{item.name}
 										</a>
-										<p className='repo-type btn border rounded-pill py-0 px-2 m-0'>
-											{item.visibility}
-										</p>
+										{item.visibility === "public" ? (
+											<span className='repo-type btn user-select-none border rounded-pill py-0 px-2 m-0'>
+												Public
+											</span>
+										) : (
+											<span className='repo-type btn user-select-none border rounded-pill py-0 px-2 m-0'>
+												Private
+											</span>
+										)}
 									</div>
 									<div className='input-group d-flex justify-content-end'>
 										<button
@@ -144,7 +150,23 @@ const index = () => {
 										</ul>
 									</div>
 								</div>
-								<div className='item-bottom d-flex align-items-center justify-content-start mt-3 gap-3'>
+								<div className='item-bottom d-flex align-items-center justify-content-start mt-0 gap-3'>
+									<p className={`repo-language m-0`}>{item.description}</p>
+								</div>
+								<div className='item-bottom d-flex align-items-center justify-content-start mt-3 gap-1 d-flex'>
+									{item.topics.map((topic) => {
+										return (
+											<a
+												className='repo-topic btn border rounded-pill py-0 px-2 m-0'
+												href={`
+											https://github.com/topics/${topic}
+											`}>
+												{topic}
+											</a>
+										);
+									})}
+								</div>
+								<div className='item-bottom d-flex align-items-center justify-content-start mt-2 mb-1 gap-3'>
 									<p
 										className={`repo-language m-0 ${
 											item.language === "JavaScript"
@@ -157,7 +179,7 @@ const index = () => {
 										}`}>
 										{item.language}
 									</p>
-									<p className='updated m-0'>{`Updated at ${
+									<p className='updated m-0'>{`Updated on ${
 										item.updated_at.split("T")[0]
 									}`}</p>
 								</div>

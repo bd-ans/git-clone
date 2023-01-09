@@ -83,7 +83,7 @@ const index = () => {
 						<li className='nav-item w-100 text-white d-flex justify-content-start align-items-center gap-2 p-2'>
 							<img
 								className='navbar-img d-block rounded-circle'
-								src='https://avatars.githubusercontent.com/u/93200270?v=4'
+								src='https://avatars.githubusercontent.com/u/76886259?v=4'
 								width='20'
 								height='20'></img>
 							{userInfo.login}

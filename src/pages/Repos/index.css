@@ -16,6 +16,25 @@
 	width: 120px;
 }
 
+.repo-topic {
+	font-size: 14px;
+	color: #0969da;
+	background-color: #ddf4ff;
+	border-color: #ddf4ff !important;
+	font-weight: 500;
+}
+
+.repo-topic:hover {
+	background-color: #096bdaea;
+	color: #fff;
+	border-color: #ddf4ff !important;
+}
+
+.repo-type {
+	font-size: 13px !important;
+	line-height: normal;
+}
+
 @media only screen and (max-width: 768px) {
 	.repos-top {
 		flex-direction: column-reverse;
@@ -28,5 +47,9 @@
 
 	.search-repo {
 		min-width: 100%;
+	}
+
+	.repo-title {
+		font-size: 19px !important;
 	}
 }

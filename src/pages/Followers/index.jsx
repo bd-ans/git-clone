@@ -49,7 +49,7 @@ const index = () => {
 										</div>
 									</div>
 									<button className='follow-btn btn btn-outline-light bg-light text-dark border rounded-3'>
-										Follow
+										Unfollow
 									</button>
 								</li>
 							);

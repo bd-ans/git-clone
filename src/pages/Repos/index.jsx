@@ -156,9 +156,9 @@ const index = () => {
 									{item.topics.map((topic) => {
 										return (
 											<a
+												key={topic}
 												className='repo-topic btn border rounded-pill py-0 px-2 m-0'
-												href={`
-											https://github.com/topics/${topic}
+												href={`https://github.com/topics/${topic}
 											`}>
 												{topic}
 											</a>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { context } from "../../context/context";
+import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 
 const index = () => {
@@ -18,7 +19,7 @@ const index = () => {
 							return (
 								<li
 									className='border-bottom py-4 d-flex justify-content-between align-items-start'
-									key={follower.id}>
+									key={uuidv4()}>
 									<div className='item-left d-flex align-items-center gap-3'>
 										<img
 											className='rounded-circle'

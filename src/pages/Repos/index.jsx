@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { context } from "../../context/context";
 import Paginate from "./paginate";
+import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 
 const index = () => {
@@ -89,7 +90,7 @@ const index = () => {
 				<ul className='repo-list list-unstyled d-flex flex-column gap-2 p-0 m-0 my-3'>
 					{lastPage.map((item) => {
 						return (
-							<li className='repo-item border-bottom w-100 py-2' key={item}>
+							<li key={uuidv4()} className='repo-item border-bottom w-100 py-2'>
 								<div className='item-top w-100 d-flex justify-content-between align-items-center'>
 									<div className='item-top-info w-100'>
 										<a

@@ -20,12 +20,11 @@ const paginate = ({ repos, limit, lastPage, active, paginate }) => {
 				{point.map((item) => {
 					return (
 						<li
-							key={item}
+							key={uuidv4()}
 							className={`page-item ${active === item ? "active" : ""}`}
 							onClick={() => {
 								paginate(item);
-							}}
-							id={item}>
+							}}>
 							<p className='page-link btn'>{item}</p>
 						</li>
 					);

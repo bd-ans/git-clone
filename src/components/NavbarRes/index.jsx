@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { context } from "../../context/context";
+import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 
 const index = () => {
@@ -44,16 +45,18 @@ const index = () => {
 									!searchUser ? setFoundUsers([]) : ""
 								);
 							}}
-							onKeyPress={(e) => {
-								e.key.toLowerCase().trim() === "enter" ? getInfo() : "";
-							}}></input>
+					
+							onKeyDown={(e) => {
+								return e.key === "Enter" ? getInfo() : "";
+							}}
+						></input>
 						<ul className='search-items position-absolute list-unstyled p-0 m-0 rounded-3'>
 							{searchUser
 								? foundUsers.map((item) => {
 										return (
 											<li
 												className='search-item py-2 px-2  border-bottom'
-												key={item.id}
+												key={uuidv4()}
 												onClick={(e) => {
 													setUser(item.login), setSearchUser("");
 												}}>

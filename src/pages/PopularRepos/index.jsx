@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import "./index.css";
 import { context } from "../../context/context";
+import { v4 as uuidv4 } from "uuid";
+import "./index.css";
 
 const index = () => {
 	const { values } = useContext(context);
@@ -20,7 +21,7 @@ const index = () => {
 				<ul className='repos-list list-unstyled d-flex flex-wrap align-items-center justify-content-between p-0 m-0'>
 					{repos.slice(0, 6).map((item) => {
 						return (
-							<li className='repos-item card p-3 mb-3' key={item.id}>
+							<li className='repos-item card p-3 mb-3' key={uuidv4()}>
 								<div className='item-top d-flex justify-content-between align-items-center mb-4'>
 									<div className='d-flex align-items-center gap-2'>
 										<svg

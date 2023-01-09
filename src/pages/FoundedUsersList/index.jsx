@@ -73,7 +73,7 @@ const index = () => {
 						</div>
 					)}
 				</ul>
-				<div className='container d-flex justify-content-center mt-3'>
+				<div className='container d-flex justify-content-center mt-4'>
 					<nav aria-label='Page navigation example'>
 						<Paginate
 							repos={foundUsers}
